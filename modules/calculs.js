@@ -8,7 +8,14 @@ function calculStats(tab) {
 
   const ecartType = Math.sqrt(variance);
 
-  const incertitude = ecartType / Math.sqrt(n);
+  // incertitude type A (statistique)
+  const incertitudeA = ecartType / Math.sqrt(n);
 
-  return { moyenne, incertitude };
+  return {
+    n,
+    moyenne,
+    variance,
+    ecartType,
+    incertitudeA
+  };
 }
