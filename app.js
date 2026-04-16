@@ -13,19 +13,23 @@ function analyser() {
     if (!isNaN(i)) I.push(i);
   });
 
-  const resultU = calculStats(U);
-  const resultI = calculStats(I);
+  const statsU = calculStats(U);
+  const statsI = calculStats(I);
+
+  // HISTOGRAMME
+  construireHistogramme(U, "histogramme");
+
+  // DISPERSION QUALITATIVE (BAC PRO)
+  const interpretation = analyserDispersion(statsU);
 
   document.getElementById("resultats").innerHTML = `
-    <p><b>Tension :</b> ${resultU.moyenne.toFixed(2)} ± ${resultU.incertitude.toFixed(2)} V</p>
-    <p><b>Intensité :</b> ${resultI.moyenne.toFixed(2)} ± ${resultI.incertitude.toFixed(2)} A</p>
+    <p><b>Tension :</b> ${formaterResultat(statsU.moyenne, statsU.incertitudeA)} V</p>
+    <p><b>Intensité :</b> ${formaterResultat(statsI.moyenne, statsI.incertitudeA)} A</p>
+    <p><b>Écart-type :</b> ${statsU.ecartType.toFixed(3)}</p>
   `;
 
-  const analyse = genererAnalyse(resultU, resultI);
+  document.getElementById("analyse").innerHTML = interpretation;
 
-  document.getElementById("analyse").innerHTML = analyse;
-
-  const rapport = genererRapport(resultU, resultI, analyse);
-
-  document.getElementById("rapport").textContent = rapport;
+  document.getElementById("rapport").textContent =
+    genererRapport(statsU, statsI);
 }
