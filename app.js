@@ -1,4 +1,4 @@
-function analyser() {
+window.analyser = function() {
 
   const lignes = document.querySelectorAll("#table-mesures tbody tr");
 
