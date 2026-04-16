@@ -11,6 +11,7 @@ U = ${formaterResultat(U.moyenne, U.incertitudeA)} V
 - Moyenne = ${U.moyenne.toFixed(3)} (meilleur estimateur de la grandeur)
 - Écart-type = ${U.ecartType.toFixed(3)} (dispersion des mesures)
 - Incertitude type A = ${U.incertitudeA.toFixed(3)}
+- Qualité de la mesure : ${evaluerQualite(U)}
 
 📊 INTENSITÉ
 I = ${formaterResultat(I.moyenne, I.incertitudeA)} A
