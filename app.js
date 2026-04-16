@@ -13,13 +13,19 @@ window.analyser = function() {
     if (!isNaN(i)) I.push(i);
   });
 
+  // sécurité
+  if (U.length === 0 || I.length === 0) {
+    alert("⚠️ Entre au moins une valeur !");
+    return;
+  }
+
   const statsU = calculStats(U);
   const statsI = calculStats(I);
 
   // HISTOGRAMME
   construireHistogramme(U, "histogramme");
 
-  // DISPERSION QUALITATIVE (BAC PRO)
+  // DISPERSION
   const interpretation = analyserDispersion(statsU);
 
   document.getElementById("resultats").innerHTML = `
