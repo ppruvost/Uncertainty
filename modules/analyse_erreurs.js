@@ -19,3 +19,27 @@ function genererAnalyse(U, I) {
 
   return texte;
 }
+
+function analyserDispersion(stats) {
+
+  let texte = "<h3>📌 Analyse de la dispersion</h3><ul>";
+
+  // lien référentiel : dispersion = incertitude expérimentale
+  if (stats.ecartType < 0.1) {
+    texte += "<li>✔ Faible dispersion → mesures homogènes</li>";
+  } else if (stats.ecartType < 0.5) {
+    texte += "<li>⚠ Dispersion moyenne → variabilité modérée</li>";
+  } else {
+    texte += "<li>❌ Forte dispersion → mesures peu fiables</li>";
+  }
+
+  texte += `
+    <li>📊 Moyenne = meilleur estimateur de la grandeur</li>
+    <li>📉 Écart-type = estimation de la dispersion</li>
+    <li>📌 Incertitude expérimentale liée à la variabilité des mesures</li>
+  `;
+
+  texte += "</ul>";
+
+  return texte;
+}
