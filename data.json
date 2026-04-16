@@ -5,10 +5,7 @@
     "résolution appareil",
     "fluctuation du courant",
     "échauffement du circuit"
-  ]
-}
-
-{
+  ],
   "instruments": {
     "multimetre_V": {
       "resolution": 0.01,
