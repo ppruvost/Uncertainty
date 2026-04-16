@@ -18,6 +18,7 @@ I = ${formaterResultat(I.moyenne, I.incertitudeA)} A
 - Moyenne = valeur la plus probable
 - Écart-type = ${I.ecartType.toFixed(3)}
 - Incertitude type A = ${I.incertitudeA.toFixed(3)}
+- Qualité de la mesure : ${evaluerQualite(I)}
 
 🧠 ANALYSE STATISTIQUE
 - La dispersion des mesures traduit la variabilité expérimentale
