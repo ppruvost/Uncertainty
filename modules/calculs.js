@@ -1,3 +1,6 @@
+// ==========================
+// STATISTIQUES
+// ==========================
 function calculStats(tab) {
 
   const n = tab.length;
@@ -18,4 +21,20 @@ function calculStats(tab) {
     ecartType,
     incertitudeA
   };
+}
+// ==========================
+// CHIFFRES SIGNIFICATIFS
+// ==========================
+
+function formaterResultat(valeur, incertitude) {
+
+  // règle BAC Pro : 1 chiffre significatif sur l'incertitude
+  const incArrondie = parseFloat(incertitude.toPrecision(1));
+
+  // on aligne la valeur sur l'incertitude
+  const decimales = (incArrondie.toString().split(".")[1] || "").length;
+
+  const valArrondie = valeur.toFixed(decimales);
+
+  return `${valArrondie} ± ${incArrondie}`;
 }
