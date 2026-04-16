@@ -1,4 +1,4 @@
-function genererRapport(U, I) {
+function genererRapport(U, I, P, uP, eAbs, eRel, Pnom, conformite) {
 
   return `
 =============================
@@ -56,6 +56,7 @@ P = ${formaterResultat(P, uP)} W
 ✔ CONCLUSION
 La valeur retenue est la moyenne des mesures, associée à une incertitude liée à la dispersion et aux instruments de mesure.
 La lampe est considérée conforme si l’erreur relative reste faible (≈ < 10%).
+
 =============================
 `;
 }
