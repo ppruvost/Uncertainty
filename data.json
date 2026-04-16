@@ -1,0 +1,9 @@
+{
+  "types_erreurs": [
+    "erreur de lecture",
+    "mauvais contact électrique",
+    "résolution appareil",
+    "fluctuation du courant",
+    "échauffement du circuit"
+  ]
+}
