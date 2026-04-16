@@ -1,20 +1,42 @@
-function genererRapport(U, I, analyseHTML) {
+function genererRapport(U, I) {
 
   return `
-RAPPORT TP - INCERTITUDES
+=============================
+📄 RAPPORT TP - INCERTITUDES
+=============================
 
-Tension :
-U = ${U.moyenne.toFixed(2)} ± ${U.incertitude.toFixed(2)} V
+📊 TENSION
+U = ${formaterResultat(U.moyenne, U.incertitudeA)} V
 
-Intensité :
-I = ${I.moyenne.toFixed(2)} ± ${I.incertitude.toFixed(2)} A
+- Moyenne = meilleur estimateur de la grandeur
+- Écart-type = ${U.ecartType.toFixed(3)} (dispersion des mesures)
+- Incertitude type A = ${U.incertitudeA.toFixed(3)}
 
-Analyse :
-- Variabilité des mesures observée
-- Sources d'erreur instrumentales et humaines
-- Qualité de la mesure : moyenne
+📊 INTENSITÉ
+I = ${formaterResultat(I.moyenne, I.incertitudeA)} A
 
-Conclusion :
-Les mesures présentent une incertitude liée aux instruments et aux conditions expérimentales.
+- Moyenne = valeur la plus probable
+- Écart-type = ${I.ecartType.toFixed(3)}
+- Incertitude type A = ${I.incertitudeA.toFixed(3)}
+
+🧠 ANALYSE STATISTIQUE
+- La dispersion des mesures traduit la variabilité expérimentale
+- L’écart-type est un estimateur de cette dispersion
+- La moyenne est le meilleur estimateur de la grandeur physique
+
+⚠️ SOURCES D’INCERTITUDE
+- Instrument de mesure (résolution, précision constructeur)
+- Manipulation expérimentale (lecture, contact, réglage)
+- Variations du circuit électrique
+
+📌 INTERPRÉTATION BAC PRO
+- Faible dispersion → mesure fiable
+- Forte dispersion → refaire les mesures
+- L’incertitude augmente avec la variabilité
+
+✔ CONCLUSION
+La valeur retenue est la moyenne des mesures, associée à une incertitude liée à la dispersion et aux instruments de mesure.
+
+=============================
 `;
 }
