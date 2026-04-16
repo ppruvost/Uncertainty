@@ -9,7 +9,7 @@
 
 <body>
 
-  <h1>🔬 TP : Mesures et incertitudes (Électricité)</h1>
+  <h1> TP : Mesures et incertitudes (Électricité)</h1>
 
   <section class="bloc">
     <h2>📊 Saisie des mesures</h2>
@@ -76,7 +76,17 @@
       </tbody>
     </table>
 
-    <button onclick="analyser()">📈 Analyser les données</button>
+  <div style="margin-top:10px;">
+    <label for="puissanceLampe"><b>💡 Puissance nominale de la lampe (12V) :</b></label>
+    <select id="puissanceLampe">
+      <option value="5">5 W</option>
+      <option value="10">10 W</option>
+      <option value="21">21 W</option>
+      <option value="55">55 W</option>
+    </select>
+  </div>
+
+  <button onclick="analyser()">📈 Analyser les données</button>
   </section>
 
   <section class="bloc">
