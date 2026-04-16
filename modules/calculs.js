@@ -38,3 +38,13 @@ function formaterResultat(valeur, incertitude) {
 
   return `${valArrondie} ± ${incArrondie}`;
 }
+//=======================
+// 🧠 QUALITÉ DE MESURE
+//=======================
+
+function evaluerQualite(U) {
+
+  if (U.ecartType < 0.1) return "🟢 Très bonne qualité de mesure";
+  if (U.ecartType < 0.5) return "🟠 Qualité moyenne";
+  return "🔴 Mesures à refaire";
+}
