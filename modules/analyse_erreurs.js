@@ -43,3 +43,20 @@ function analyserDispersion(stats) {
 
   return texte;
 }
+function explicationReferentiel() {
+
+  return `
+📚 NOTIONS IMPORTANTES :
+
+✔ Toute mesure est entachée d'une incertitude
+✔ La moyenne est le meilleur estimateur de la grandeur
+✔ L'écart-type mesure la dispersion des valeurs
+✔ La dispersion représente une incertitude expérimentale
+✔ L'instrument impose une incertitude supplémentaire
+
+👉 Incertitude totale = combinaison :
+- variabilité des mesures
+- instrument de mesure
+- conditions expérimentales
+`;
+}
