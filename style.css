@@ -32,3 +32,25 @@ button {
   padding: 10px;
   cursor: pointer;
 }
+
+@media print {
+
+  button {
+    display: none;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .bloc {
+    page-break-inside: avoid;
+    margin-bottom: 20px;
+  }
+
+  canvas {
+    max-width: 100%;
+  }
+
+}
