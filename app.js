@@ -85,3 +85,18 @@ window.analyser = function() {
   document.getElementById("rapport").textContent =
     genererRapport(statsU, statsI, P, uP, erreurAbs, erreurRel, Pnom, conformite);
 }
+
+// ==========================
+// Fonction impression PDF
+// ==========================
+window.imprimerPDF = function() {
+
+  const boutons = document.querySelectorAll("button");
+
+  boutons.forEach(btn => btn.style.display = "none");
+
+  window.print();
+
+  boutons.forEach(btn => btn.style.display = "inline-block");
+
+}
